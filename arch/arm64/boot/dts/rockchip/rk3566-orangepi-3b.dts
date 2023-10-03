@@ -20,7 +20,7 @@
 	compatible = "rockchip,rk3566-orangepi-3b", "rockchip,rk3566";
 
 	chosen: chosen {
-		bootargs = "earlycon=uart8250,mmio32,0xfe660000 console=ttyFIQ0";
+		bootargs = "root=/dev/mmcblk1p2 rootwait rw rootfstype=ext4 console=ttyS2,1500000";
 	};
 
 	/* labeled +12v in schematic */
@@ -1077,7 +1077,7 @@
         status = "okay";
 
         ov5647: ov5647@36 {
-                status = "disabled";
+                status = "okay";
                 compatible = "ovti,ov5647";
                 reg = <0x36>;
 		clocks = <&ext_cam_ov5647_clk>;
@@ -1115,7 +1115,7 @@
 };
 
 &csi2_dphy_hw {
-      status = "disabled";
+      status = "okay";
 };
 
 &csi2_dphy0 {
@@ -1123,7 +1123,7 @@
 };
 
 &csi2_dphy1 {
-        status = "disabled";
+        status = "okay";
         /*
         * dphy1 only used for split mode,
         * can be used  concurrently  with dphy2
@@ -1159,15 +1159,15 @@
 };
 
 &rkisp {
-        status = "disabled";
+        status = "okay";
 };
 
 &rkisp_mmu {
-        status = "disabled";
+        status = "okay";
 };
 
 &rkisp_vir0 {
-        status = "disabled";
+        status = "okay";
         port {
                 #address-cells = <1>;
                 #size-cells = <0>;
